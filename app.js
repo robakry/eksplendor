@@ -22,8 +22,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const EksplendorDB = require("./models/eksplendor");
 const ReviewDB = require("./models/review");
 const MongoStore = require("connect-mongo");
-// const dbUrl = process.env.db_url;
-const dbUrl = "mongodb://127.0.0.1:27017/EksplendorDB";
+const dbUrl = process.env.db_url;
 
 // Connecting to Mongo Database
 mongoose.connect(dbUrl, {
