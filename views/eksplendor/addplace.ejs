@@ -1,0 +1,56 @@
+<% layout('layouts/boilerplate') %>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+<div class="bg-image-div">
+  <div class="form-wrapper">
+
+    <div class="form">
+      <h1 class="title">Dodaj nowe miejsce.</h1>
+      <form action="/places" method="POST" enctype="multipart/form-data">
+
+        <div class="form-cart">
+          <label for="name" id="label-name">NAZWA*</label><br>
+          <input type="text" name="name" id="name" placeholder="Nazwa*">
+          <small>Error MSG</small>
+        </div>
+
+        <div class="form-cart">
+          <h3 class="title title-small">Lokalizacja:</h3>
+          <div id="geocoder" class="geocoder">
+          </div>
+
+        </div>
+
+        <div id="new-place-map"></div>
+
+        <div class="form-cart">
+          <input type="text" name="location" id="location" placeholder="Lokalizacja*">
+          <small>Error MSG</small>
+        </div>
+
+        <div class="form-cart">
+          <h3 class="title title-small">Zdjęcia:</h3>
+          <input type="file" name="image" id="image" multiple>
+        </div>
+
+        <div class="form-cart">
+          <h3 class="title title-small">Opis:</h3>
+          <textarea type="text" name="description" id="description" placeholder="Opis"></textarea>
+        </div>
+
+        <button class="btn btn-invalid">Dodaj Miejsce</button>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const mapBoxToken = '<%-process.env.mapboxtoken%>';
+</script>
+
+<script src="/maps/newPlaceMap.js"></script>
+<script src="/js/showLabel.js"></script>
+<script src="/js/placeFormCheck.js"></script>

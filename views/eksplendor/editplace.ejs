@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %>
+<div class="bg-image-div">
+  <div class="form-wrapper">
+    <div class="form">
+      <form action="/places/<%=place.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <h1 class="title">Edytowanie <%= place.name %>.</h1>
+
+        <div class="form-cart">
+          <label for="name" id="label-name">NAZWA*</label><br />
+          <input type="text" name="name" id="name" placeholder="Nazwa" value="<%= place.name %>" />
+          <small>Error MSG</small>
+        </div>
+
+        <input type="text" name="location" id="location" placeholder="Lokalizacja " value="<%= place.location %>" />
+
+        <div class="form-cart">
+          <h3 class="title title-small">Dodaj zdjęcia:</h3>
+          <input type="file" name="image" id="image" multiple />
+        </div>
+
+        <div class="form-cart">
+          <h3 class="title title-small">Usuń zdjęcia.</h3>
+          <% place.images.forEach(function(img, i) { %>
+          <div class="img-thumbnails">
+            <img src="<%=img.thumbnail%>" alt="" />
+            <input type="checkbox" id="img-<%=i%>" name="deleteImages[]" value="<%=img.filename%>" />
+          </div>
+          <% }) %>
+        </div>
+
+        <div class="form-cart">
+          <h3 class="title title-small">Opis:</h3>
+          <textarea type="text" name="description" id="description" placeholder="Opis">
+          <%= place.description %></textarea>
+        </div>
+
+        <button class="btn">Zapisz</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/placeFormCheck.js"></script>
+<script src="/js/showLabel.js"></script>

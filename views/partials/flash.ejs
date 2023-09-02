@@ -1,0 +1,14 @@
+<% if (success.length) { %>
+    <div class="flash flash-success">
+        <%= success %>.
+        <button class="flash-close">x </button>
+    </div>
+<% } %>
+<% if (error.length) { %>
+    <div class="flash flash-error">
+        <%= error %>.
+        <button class="flash-close">x </button>
+        </div>
+<% } %>
+
+<script src="/js/closeFlash.js"></script>

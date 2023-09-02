@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+<div class="bg-image-div">
+  <div class="form-wrapper">
+    <div class="form">
+      <form action="/user/login" method="POST" autocomplete="off">
+        <h1 class="title">Zaloguj się.</h1>
+        <p>
+          Nie masz jeszcze konta? Zarejestruj się
+          <a href="/user/register">tutaj</a>.
+        </p>
+
+        <div class="form-cart">
+          <label for="name" id="label-name">LOGIN*</label><br />
+          <input type="text" name="username" id="name" placeholder="Login*" />
+          <small>Error MSG</small>
+        </div>
+
+        <div class="form-cart">
+          <label for="password" id="label-password">HASŁO*</label><br />
+          <input type="password" name="password" id="password" placeholder="Hasło*" />
+          <small>Error MSG</small>
+        </div>
+
+        <button class="btn btn-invalid">Zaloguj</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="/js/loginFormCheck.js"></script>
+<script src="/js/showLabel.js"></script>

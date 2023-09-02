@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+<div class="bg-image-div">
+  <div class="container">
+
+    <div class="header">
+      <h1 class="title">Twoja Wirtualna Mapa.</h1>
+      <h2 class="title title-small">Kliknij <a href="/user/register">tutaj</a> aby rozpocząć.</h2>
+    </div>
+
+  </div>
+  
+  <div class="wrapper">
+    <div class="counters">
+
+      <div class="counter-item">
+        <h2 class="num" data-val="<%= placeDB.length %>">0</h3>
+          <h3>miejsc.</h3>
+      </div>
+
+      <div class="counter-item">
+        <h2 class="num" data-val="<%= userDB.length %>">0</h3>
+          <h3>użytkowników.</h3>
+      </div>
+
+      <div class="counter-item">
+        <h2 class="num" data-val="<%= reviewsDB.length %>">0</h3>
+          <h3>kometarzy.</h3>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="logos">
+
+    <div class="logo-item"><a href="https://nodejs.org/en/about"><img src="/images/logos/node_logo.png" alt=""></a></div>
+    <div class="logo-item"><a href="https://expressjs.com/"><img src="/images/logos/express_logo.png" alt=""></a></div>
+    <div class="logo-item"><a href="https://www.mongodb.com/"><img src="/images/logos/mongo_logo.png" alt=""></a></div>
+    <div class="logo-item"><a href="https://mongoosejs.com/"><img src="/images/logos/mongoose_logo.png" alt=""></a></div>
+    <div class="logo-item"><a href="https://www.mapbox.com/"><img src="/images/logos/mapbox_logo.png" alt=""></a></div>
+    <div class="logo-item"><a href="https://cloudinary.com/"><img src="/images/logos/cloudinary_logo.png" alt=""></a></div>
+
+  </div>
+</div>
+
+<script src="/js/numCounter.js"></script>

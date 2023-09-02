@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <a href="/" class="nav-logo">eksplendor</a>
+    <ul class="nav-menu">
+        <li class="nav-item">
+            <a href="/places/usermap" class="nav-link">Twoja Mapa</a>
+        </li>
+        <li class="nav-item">
+            <a href="/places" class="nav-link">Wszystkie Miejsca</a>
+        </li>
+        <li class="nav-item">
+            <a href="/places/new" class="nav-link">Dodaj Miejsce</a>
+        </li>
+        <% if (!currentUser){%>
+        <li class="nav-item">
+            <a href="/user/login" class="nav-link">Zaloguj</a>
+        </li>
+        <li class="nav-item">
+            <a href="/user/register" class="nav-link">Załóż Konto</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+            <a href="/user/logout" class="nav-link">Wyloguj</a>
+        </li>
+        <% } %>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>

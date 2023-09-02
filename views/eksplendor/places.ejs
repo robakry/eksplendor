@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+<div id="map-main"></div>
+
+<div class="title-wrapper">
+  <h1 class="title">Lista Wszystkich Miejsc.</h1>
+</div>
+
+<div class="place-carts">
+  <% for (place of places) { %>
+  <div class="cart-item">
+    <div class="img-item">
+      <% if(place.images.length) {%>
+      <img src="<%=place.images[0].thumbnail%>" alt="" />
+      <% } else {%>
+      <img src="/images/img-placeholder.jpg" alt="" />
+      <% } %>
+    </div>
+
+    <div class="cart-info">
+      <p class="cart-name"><%= place.name %></p>
+      <p class="cart-author">
+        dodano przez <span> <%= place.author.username %></span>.
+      </p>
+      <p class="cart-location"><%= place.location %></p>
+      <p class="cart-link">
+        <a href="/places/<%=place.id%>">> Zobacz</a>
+      </p>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<script>
+  const mapBoxToken = '<%-process.env.mapboxtoken%>';
+  const allPlaces = {
+    features: <%- JSON.stringify(places) %>
+  };
+</script>
+
+<script src="/js/cartImageZoom.js"></script>
+<script src="/maps/allPlacesMap.js"></script>

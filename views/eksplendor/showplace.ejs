@@ -1,0 +1,118 @@
+<% layout('layouts/boilerplate') %>
+<div id='show-page-map'></div>
+
+<div class="header-wrapper">
+  <div class="header-title">
+    <h2>
+      <%= place.name %>
+    </h2>dodano przez <span>
+      <%= place.author.username %>.
+    </span>
+
+  </div>
+  <div class="header-buttons">
+    <% if(currentUser && currentUser.id===place.author.id) {%>
+    <a href="/places/<%=place.id%>/editplace"><button class="btn" id="edit-button">Edytuj
+      </button></a>
+    <form action="/places/<%=place.id%>?_method=DELETE" method="POST">
+      <button class="btn" id="delete-button">Usuń</button>
+    </form>
+    <% } %>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="title-wrapper">
+    <% if(!place.images.length) { %>
+    <h2 class="title">
+      Nie ma żadnych zdjęć.
+    </h2>
+    <% } else { %>
+    <h2 class="title">
+      Wszystkie zdjęcia.
+    </h2>
+    <% } %>
+  </div>
+
+  <div class="popup popup-hidden">
+    <button id="popup-close-button"><span class="material-symbols-outlined">close</span></button>
+    <img src="" alt="">
+    <button class="popup-arrow" id="popup-arrow-left"><span class="material-symbols-outlined">chevron_left</span></button>
+    <button class="popup-arrow" id="popup-arrow-right"><span class="material-symbols-outlined">chevron_right</span></button>
+  </div>
+
+  <div class="images">
+    <% for (let img of place.images) {%>
+    <div class="image-item">
+      <img src="<%=img.url%>" alt="">
+    </div>
+    <% } %>
+  </div>
+
+  <% if(place.description) { %>
+  <div class="title-wrapper">
+    <h2 class="title description-title">
+      Opis <span class="material-symbols-outlined">expand_more</span>
+    </h2>
+    <div class="description-wrapper description-hidden">
+      <p class="description">
+        <%= place.description %>
+      </p>
+    </div>
+  </div>
+  <% } %>
+
+  <div class="title-wrapper">
+    <h2 class="title">
+      <%= place.reviews.length %>
+      <% if (place.reviews.length===0 || place.reviews.length> 4) { %>
+      Komentarzy
+    </h2>
+    <% } if (place.reviews.length===1) { %>
+    Komentarz</h2>
+    <% } if (place.reviews.length> 1 && place.reviews.length < 4) { %>
+    Komentarze</h2>
+    <% } %>
+  </div>
+
+  <% if (currentUser) {%>
+  <form action="/places/<%=place.id%>/review" method="POST">
+    <div class="review-form">
+      <textarea type="text" name="reviewtext" id="reviewtext" placeholder="Dodaj komentarz"></textarea>
+      <button class="btn" id="add-review-button">Dodaj</button>
+  </form>
+</div>
+<% } %>
+
+<div class="reviews">
+  <% for (review of place.reviews) { %>
+  <div class="review-item">
+    <div class="review-username">
+      <p>
+        <%= review.username.username %>
+      </p>
+    </div>
+    <div class="review-text">
+      <p>
+        <%= review.reviewtext %>
+      </p>
+    </div>
+    <% if(currentUser && currentUser.id===review.username.id) {%>
+    <form action="/places/<%=place.id%>/review/<%=review.id%>?_method=DELETE" method="POST">
+      <button class="btn" id="delete-review-button">Usuń</button>
+    </form>
+    <% } %>
+  </div>
+  <% } %>
+</div>
+</div>
+
+<script>
+  const mapBoxToken = '<%-process.env.mapboxtoken%>';
+  const placeMap = <%- JSON.stringify(place) %>;
+</script>
+
+<script src="/js/toggleDescription.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/maps/placeMap.js"></script>
