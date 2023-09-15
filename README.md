@@ -1,5 +1,5 @@
 
-# Eskplendor - Virtual map of places
+# Eksplendor - Virtual map of places
 
 Live App: https://eksplendor.onrender.com/
 
