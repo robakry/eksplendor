@@ -334,9 +334,9 @@ main {
 
 .cart-item {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   width: 49%;
+  height: 210px;
   margin: 12px 5px;
   border: 1px solid #d3d2d2;
   transition: 0.2s;
@@ -349,13 +349,14 @@ main {
 
 .img-item {
   height: 210px;
+  width: 40%;
+  min-width: 270px;
   overflow: hidden;
 }
 
 .cart-item img {
-  width: auto;
-  max-width: 300px;
-  height: 210px;
+  width: 100%;
+  height: 100%;
   transition: 0.7s;
 }
 
@@ -365,6 +366,7 @@ main {
 
 .cart-info {
   margin-left: 30px;
+  width: 60%;
 }
 
 .cart-info span {
@@ -404,6 +406,9 @@ main {
   .cart-item {
     width: 100%;
   }
+  .img-item {
+    width: 25%;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -417,13 +422,13 @@ main {
 }
 
 @media only screen and (max-width: 678px) {
-  .img-item {
-    height: 190px;
+  .cart-item {
+    height: 150px;
   }
 
-  .cart-item img {
-    max-width: 210px;
-    height: 190px;
+  .img-item {
+    min-width: 200px;
+    height: 150px;
   }
 
   .cart-info {
@@ -439,7 +444,7 @@ main {
   }
 
   .cart-location {
-    font-size: 0.9rem;
+    display: none;
   }
 
   .cart-link a {
@@ -457,7 +462,7 @@ main {
 }
 
 .header-title {
-  color: var(--eks-gray);
+  color: var(--eks-light-gray);
 }
 
 .header-title h2 {
@@ -800,6 +805,17 @@ main {
   height: 600px;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 1000px) {
+  #map-main {
+    height: 300px;
+  }
+  
+  #map-user {
+    height: 300px;
+  }
+}
+
 
 /* Buttons */
 .btn {
