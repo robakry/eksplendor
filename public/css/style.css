@@ -294,8 +294,12 @@ main {
     margin-top: 30px;
   }
 
+  .logo-item {
+    margin: 10px 15px;
+  }
+
   .logo-item img {
-    width: 125px;
+    width: 110px;
   }
 }
 
@@ -485,11 +489,17 @@ main {
 
 @media only screen and (max-width: 678px) {
   .header-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .header-title h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .header-buttons button {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    margin: 0;
   }
 }
 
@@ -810,12 +820,11 @@ main {
   #map-main {
     height: 300px;
   }
-  
+
   #map-user {
     height: 300px;
   }
 }
-
 
 /* Buttons */
 .btn {
