@@ -5,11 +5,11 @@ Live App: https://eksplendor.onrender.com/
 
 ## 📷 Screenshots
 
-![](https://res.cloudinary.com/dwvei3ags/image/upload/v1694801540/Zrzut_ekranu_2023-09-15_200617_g8syfn.png)
+![](https://res.cloudinary.com/dwvei3ags/image/upload/v1694990841/Zrzut_ekranu_2023-09-18_004445_vvuhyx.png)
 
-![](https://res.cloudinary.com/dwvei3ags/image/upload/v1694801540/Zrzut_ekranu_2023-09-15_201154_ku4f4l.png)
+![](https://res.cloudinary.com/dwvei3ags/image/upload/v1694990843/Zrzut_ekranu_2023-09-18_004554_wih9vk.png)
 
-![](https://res.cloudinary.com/dwvei3ags/image/upload/v1694801537/Zrzut_ekranu_2023-09-15_200741_wqlini.png)
+![](https://res.cloudinary.com/dwvei3ags/image/upload/v1694990843/Zrzut_ekranu_2023-09-18_004645_ce0mcl.png)
 
 
 
@@ -23,7 +23,6 @@ Live App: https://eksplendor.onrender.com/
 - [Cloudinary](https://github.com/cloudinary/cloudinary_npm)
 - [Mapbox](https://github.com/mapbox/mapbox-gl-js)
 - [EJS (Embedded JavaScript Templates)](https://github.com/mde/ejs)
-- [Bootstrap](https://github.com/twbs/bootstrap)
 - Mongo DB Atlas to host database 
 - Render to host the complete application
 
