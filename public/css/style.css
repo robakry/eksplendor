@@ -58,7 +58,7 @@ main {
 
 @media only screen and (max-width: 678px) {
   .title {
-    font-size: 2.1rem;
+    font-size: 1.7rem;
     margin: 5px;
   }
 
@@ -431,7 +431,7 @@ main {
   }
 
   .img-item {
-    min-width: 200px;
+    min-width: 160px;
     height: 150px;
   }
 
