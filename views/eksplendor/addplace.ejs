@@ -6,17 +6,17 @@
   <div class="form-wrapper">
 
     <div class="form">
-      <h1 class="title">Dodaj nowe miejsce.</h1>
+      <h1 class="title">Add a new Place.</h1>
       <form action="/places" method="POST" enctype="multipart/form-data">
 
         <div class="form-cart">
-          <label for="name" id="label-name">NAZWA*</label><br>
-          <input type="text" name="name" id="name" placeholder="Nazwa*">
+          <label for="name" id="label-name">NAME*</label><br>
+          <input type="text" name="name" id="name" placeholder="Name*">
           <small>Error MSG</small>
         </div>
 
         <div class="form-cart">
-          <h3 class="title title-small">Lokalizacja:</h3>
+          <h3 class="title title-small">Location:</h3>
           <div id="geocoder" class="geocoder">
           </div>
 
@@ -25,21 +25,21 @@
         <div id="new-place-map"></div>
 
         <div class="form-cart">
-          <input type="text" name="location" id="location" placeholder="Lokalizacja*">
+          <input type="text" name="location" id="location" placeholder="Location*">
           <small>Error MSG</small>
         </div>
 
         <div class="form-cart">
-          <h3 class="title title-small">Zdjęcia:</h3>
+          <h3 class="title title-small">Images:</h3>
           <input type="file" name="image" id="image" multiple>
         </div>
 
         <div class="form-cart">
-          <h3 class="title title-small">Opis:</h3>
-          <textarea type="text" name="description" id="description" placeholder="Opis"></textarea>
+          <h3 class="title title-small">Description:</h3>
+          <textarea type="text" name="description" id="description" placeholder="Description"></textarea>
         </div>
 
-        <button class="btn btn-invalid">Dodaj Miejsce</button>
+        <button class="btn btn-invalid">Add Place</button>
 
       </form>
     </div>

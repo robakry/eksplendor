@@ -29,20 +29,19 @@ const showSuccess = (input) => {
 
 const checkPlaceName = (input, min, max) => {
     if (input.value.trim() === '') {
-        showError(input, 'Proszę wprowadzić nazwę miejsca.')
-        isPlaceNameValid = false
+        showError(input, 'Please enter a place name.');
+        isPlaceNameValid = false;
     } else if (input.value.length < min) {
-        showError(input, `Nazwa musi zawierać minimalnie ${min} znaki.`);
-        isPlaceNameValid = false
+        showError(input, `The name must contain at least ${min} characters.`);
+        isPlaceNameValid = false;
     } else if (input.value.length > max) {
-        showError(input, `Nazwa nie może zawierać więcej niż ${max} znaków.`);
-        isPlaceNameValid = false
+        showError(input, `The name cannot contain more than ${max} characters.`);
+        isPlaceNameValid = false;
     } else {
         showSuccess(input);
-        isPlaceNameValid = true
+        isPlaceNameValid = true;
     }
 };
-
 const checkLocationName = (input) => {
     if (input.value.trim() === '') {
         isLocationNameValid = false

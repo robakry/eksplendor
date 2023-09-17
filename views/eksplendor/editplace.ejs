@@ -3,23 +3,23 @@
   <div class="form-wrapper">
     <div class="form">
       <form action="/places/<%=place.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <h1 class="title">Edytowanie <%= place.name %>.</h1>
+        <h1 class="title">Editing <%= place.name %>.</h1>
 
         <div class="form-cart">
-          <label for="name" id="label-name">NAZWA*</label><br />
-          <input type="text" name="name" id="name" placeholder="Nazwa" value="<%= place.name %>" />
+          <label for="name" id="label-name">NAME*</label><br />
+          <input type="text" name="name" id="name" placeholder="Name" value="<%= place.name %>" />
           <small>Error MSG</small>
         </div>
 
-        <input type="text" name="location" id="location" placeholder="Lokalizacja " value="<%= place.location %>" />
+        <input type="text" name="location" id="location" placeholder="Location" value="<%= place.location %>" />
 
         <div class="form-cart">
-          <h3 class="title title-small">Dodaj zdjęcia:</h3>
+          <h3 class="title title-small">Add more images:</h3>
           <input type="file" name="image" id="image" multiple />
         </div>
 
         <div class="form-cart">
-          <h3 class="title title-small">Usuń zdjęcia.</h3>
+          <h3 class="title title-small">Delete images.</h3>
           <% place.images.forEach(function(img, i) { %>
           <div class="img-thumbnails">
             <img src="<%=img.thumbnail%>" alt="" />
@@ -29,12 +29,12 @@
         </div>
 
         <div class="form-cart">
-          <h3 class="title title-small">Opis:</h3>
-          <textarea type="text" name="description" id="description" placeholder="Opis">
+          <h3 class="title title-small">Description:</h3>
+          <textarea type="text" name="description" id="description" placeholder="Description">
           <%= place.description %></textarea>
         </div>
 
-        <button class="btn">Zapisz</button>
+        <button class="btn">Save</button>
       </form>
     </div>
   </div>

@@ -20,54 +20,45 @@ const showError = (input, msg) => {
     isValid = false
 };
 
-const showSuccess = (input) => {
-    const formCart = input.parentElement;
-    input.classList.add('form-success');
-    input.classList.remove('form-error');
-    const small = formCart.querySelector('small');
-    small.classList.remove('form-error')
-    isValid = true
-};
-
 const checkUsername = (input, min, max) => {
     if (input.value.trim() === '') {
-        showError(input, 'Proszę wprowadzić login.')
-        isLoginValid = false
+        showError(input, 'Please enter a username.');
+        isLoginValid = false;
     } else if (input.value.length < min) {
-        showError(input, `Login musi zawierać minimalnie ${min} znaki.`);
-        isLoginValid = false
+        showError(input, `Username must contain at least ${min} characters.`);
+        isLoginValid = false;
     } else if (input.value.length > max) {
-        showError(input, `Login nie może zawierać więcej niż ${min} znaków.`);
-        isLoginValid = false
+        showError(input, `Username cannot contain more than ${max} characters.`);
+        isLoginValid = false;
     } else {
         showSuccess(input);
-        isLoginValid = true
+        isLoginValid = true;
     }
 };
 
 const checkPassword = (input, min, max) => {
     if (input.value.trim() === '') {
-        showError(input, 'Proszę wprowadzić hasło.')
-        isPasswordValid = false
+        showError(input, 'Please enter a password.');
+        isPasswordValid = false;
     } else if (input.value.length < min) {
-        showError(input, `Hasło musi zawierać minimalnie ${min} znaków.`);
-        isPasswordValid = false
+        showError(input, `Password must contain at least ${min} characters.`);
+        isPasswordValid = false;
     } else if (input.value.length > max) {
-        showError(input, `Hasło nie może zawierać więcej niż ${max} znaków.`);
-        isPasswordValid = false
+        showError(input, `Password cannot contain more than ${max} characters.`);
+        isPasswordValid = false;
     } else {
         showSuccess(input);
-        isPasswordValid = true
+        isPasswordValid = true;
     }
 };
 
 const checkEmail = (input) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(input.value.trim())) {
-        showSuccess(input)
-        isEmailValid = true
+        showSuccess(input);
+        isEmailValid = true;
     } else {
-        showError(input, 'Proszę wprowadzić poprawny adres email');
+        showError(input, 'Please enter a valid email address.');
         isEmailValid = false
     }
 };

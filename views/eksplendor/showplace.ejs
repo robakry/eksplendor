@@ -5,17 +5,17 @@
   <div class="header-title">
     <h2>
       <%= place.name %>
-    </h2>dodano przez <span>
+    </h2>added by <span>
       <%= place.author.username %>.
     </span>
 
   </div>
   <div class="header-buttons">
     <% if(currentUser && currentUser.id===place.author.id) {%>
-    <a href="/places/<%=place.id%>/editplace"><button class="btn" id="edit-button">Edytuj
+    <a href="/places/<%=place.id%>/editplace"><button class="btn" id="edit-button">Edit
       </button></a>
     <form action="/places/<%=place.id%>?_method=DELETE" method="POST">
-      <button class="btn" id="delete-button">Usuń</button>
+      <button class="btn" id="delete-button">Delete</button>
     </form>
     <% } %>
   </div>
@@ -26,11 +26,11 @@
   <div class="title-wrapper">
     <% if(!place.images.length) { %>
     <h2 class="title">
-      Nie ma żadnych zdjęć.
+      There are no pictures yet.
     </h2>
     <% } else { %>
     <h2 class="title">
-      Wszystkie zdjęcia.
+      All images.
     </h2>
     <% } %>
   </div>
@@ -53,7 +53,7 @@
   <% if(place.description) { %>
   <div class="title-wrapper">
     <h2 class="title description-title">
-      Opis <span class="material-symbols-outlined">expand_more</span>
+      Description <span class="material-symbols-outlined">expand_more</span>
     </h2>
     <div class="description-wrapper description-hidden">
       <p class="description">
@@ -65,22 +65,14 @@
 
   <div class="title-wrapper">
     <h2 class="title">
-      <%= place.reviews.length %>
-      <% if (place.reviews.length===0 || place.reviews.length> 4) { %>
-      Komentarzy
-    </h2>
-    <% } if (place.reviews.length===1) { %>
-    Komentarz</h2>
-    <% } if (place.reviews.length> 1 && place.reviews.length < 4) { %>
-    Komentarze</h2>
-    <% } %>
+      All comments (<%= place.reviews.length %>)
   </div>
 
   <% if (currentUser) {%>
   <form action="/places/<%=place.id%>/review" method="POST">
     <div class="review-form">
-      <textarea type="text" name="reviewtext" id="reviewtext" placeholder="Dodaj komentarz"></textarea>
-      <button class="btn" id="add-review-button">Dodaj</button>
+      <textarea type="text" name="reviewtext" id="reviewtext" placeholder="Add comment..."></textarea>
+      <button class="btn" id="add-review-button">Add</button>
   </form>
 </div>
 <% } %>
@@ -100,7 +92,7 @@
     </div>
     <% if(currentUser && currentUser.id===review.username.id) {%>
     <form action="/places/<%=place.id%>/review/<%=review.id%>?_method=DELETE" method="POST">
-      <button class="btn" id="delete-review-button">Usuń</button>
+      <button class="btn" id="delete-review-button">Delete</button>
     </form>
     <% } %>
   </div>

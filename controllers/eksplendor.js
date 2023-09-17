@@ -41,7 +41,7 @@ module.exports.newPlace = async (req, res, next) => {
         description: req.body.description
     })
     await newPlace.save()
-    req.flash('success', 'Pomyślnie dodano')
+    req.flash('success', 'Successfully added')
     res.redirect(`/places/${newPlace.id}`)
 };
 
@@ -87,7 +87,7 @@ module.exports.editPlace = async (req, res, next) => {
         }
         await editedPlace.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
-    req.flash('success', 'Pomyślnie zaktualizowano')
+    req.flash('success', 'Successfully updated')
     res.redirect(`/places/${editedPlace.id}`)
 };
 
@@ -105,6 +105,6 @@ module.exports.deletePlace = async (req, res) => {
             $in: deletedPlace.reviews
         }
     })
-    req.flash('success', 'Pomyślnie usunięto')
+    req.flash('success', 'Successfully deleted')
     res.redirect('/places')
 };

@@ -6,7 +6,7 @@ const extension = (joi) => ({
     type: 'string',
     base: joi.string(),
     messages: {
-        'string.escapeHTML': '{{#label} nie może zawierać znaków HTML}'
+        'string.escapeHTML': 'It cannot contain HTML characters'
     },
     rules: {
         escapeHTML: {
@@ -31,9 +31,9 @@ const validatePlace = (req, res, next) => {
             .max(40)
             .required()
             .messages({
-                "string.min": "Nazwa miejsca musi być dłuższa niż dwa znaki",
-                "string.max": "Nazwa miejsca nie może być dłuższa niż 40 znaków",
-                "anyrequired": "Nazwa miejsca nie może być pusta"
+                "string.min": "Place name must be longer than two characters",
+                "string.max": "Place name cannot be longer than 40 characters",
+                "any.required": "Place name cannot be empty"
             })
             .escapeHTML(),
         location: Joi.string()
@@ -41,9 +41,9 @@ const validatePlace = (req, res, next) => {
             .max(150)
             .required()
             .messages({
-                "string.min": "Lokalizacja miejsca musi być dłuższa niż dwa znaki",
-                "string.max": "Lokalizacja miejsca nie może być dłuższa niż 150 znaków",
-                "any.required": "Lokalizacja miejsca nie może być pusta"
+                "string.min": "Location of the place must be longer than two characters",
+                "string.max": "Location of the place cannot be longer than 150 characters",
+                "any.required": "Location of the place cannot be empty"
             })
             .escapeHTML(),
         geometry: Joi.string()

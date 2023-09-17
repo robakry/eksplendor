@@ -3,9 +3,9 @@
 
 <div class="title-wrapper">
   <% if(!places.length) { %>
-  <h2 class="title title-small">Wygląda na to, że Twoja mapa jest pusta, kliknij <a href="/places/new">tutaj</a> aby dodać miejsce.</h2>
+  <h2 class="title title-small">It looks like you haven't added any places yet, click <a href="/places/new">here</a> to add a Place.</h2>
   <% } else {%>
-  <h1 class="title">Lista Twoich Miejsc.</h1>
+  <h1 class="title">Your Places List.</h1>
   <% } %>
 </div>
 
@@ -24,14 +24,14 @@
       <p class="cart-name">
         <%= place.name %>
       </p>
-      <p class="cart-author">dodano przez <span>
+      <p class="cart-author">added by <span>
           <%= place.author.username %>
       </span>.</p>
       <p class="cart-location">
         <%= place.location %>
       </p>
       <p class="cart-link">
-        <a href="/places/<%=place.id%>">> Zobacz</a>
+        <a href="/places/<%=place.id%>">> Show</a>
       </p>
     </div>
 

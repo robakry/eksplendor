@@ -50,7 +50,7 @@ const EksplendorSchema = new Schema({
 }, opts);
 
 EksplendorSchema.virtual('properties.popUpMarkup').get(function () {
-    return `<h3><a href="/places/${this.id}">${this.name}</a></h3><p>dodano przez <b>${this.author.username}</b>.</p><p>${this.location}</p>`
+    return `<h3><a href="/places/${this.id}">${this.name}</a></h3><p>added by <b>${this.author.username}</b>.</p><p>${this.location}</p>`
 });
 
 const Place = mongoose.model('Place', EksplendorSchema);

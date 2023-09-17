@@ -2,7 +2,7 @@
 <div id="map-main"></div>
 
 <div class="title-wrapper">
-  <h1 class="title">Lista Wszystkich Miejsc.</h1>
+  <h1 class="title">All Places List.</h1>
 </div>
 
 <div class="place-carts">
@@ -19,11 +19,11 @@
     <div class="cart-info">
       <p class="cart-name"><%= place.name %></p>
       <p class="cart-author">
-        dodano przez <span> <%= place.author.username %></span>.
+        added by <span> <%= place.author.username %></span>.
       </p>
       <p class="cart-location"><%= place.location %></p>
       <p class="cart-link">
-        <a href="/places/<%=place.id%>">> Zobacz</a>
+        <a href="/places/<%=place.id%>">> Show</a>
       </p>
     </div>
   </div>

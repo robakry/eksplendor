@@ -7,11 +7,11 @@ descriptionTitle.addEventListener("click", () => {
   if (isDescriptionHidden) {
     description.classList.remove("description-hidden");
     descriptionTitle.innerHTML =
-      'Opis <span class="material-symbols-outlined">expand_less</span>';
+      'Description <span class="material-symbols-outlined">expand_less</span>';
   } else {
     description.classList.add("description-hidden");
     descriptionTitle.innerHTML =
-      'Opis <span class="material-symbols-outlined">expand_more</span>';
+      'Description <span class="material-symbols-outlined">expand_more</span>';
   }
   isDescriptionHidden = !isDescriptionHidden;
 });

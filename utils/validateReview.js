@@ -6,7 +6,7 @@ const extension = (joi) => ({
     type: 'string',
     base: joi.string(),
     messages: {
-        'string.escapeHTML': 'Nie może zawierać znaków HTML}'
+        'string.escapeHTML': 'It cannot contain HTML characters.'
     },
     rules: {
         escapeHTML: {
@@ -31,9 +31,9 @@ const validateReview = (req, res, next) => {
             .max(1000)
             .required()
             .messages({
-                "string.min": "Komentarz musi być dłuższy niż dwa znaki",
-                "string.max": "Komentarz nie może być dłuższy niż 1000 znaków",
-                "any.required": "Komentarz nie może być pusty"
+                "string.min": "Comment must be longer than two characters.",
+                "string.max": "Comment cannot be longer than 1000 characters.",
+                "any.required": "Comment cannot be empty."
             })
             .escapeHTML(),
         username: Joi.string()

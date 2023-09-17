@@ -15,7 +15,7 @@ module.exports.newReview = async (req, res, next) => {
     place.reviews.push(review);
     await place.save()
     await review.save()
-    req.flash('success', 'Pomyślnie dodano')
+    req.flash('success', 'Successfully added')
     res.redirect(`/places/${place.id}`)
 };
 
@@ -25,6 +25,6 @@ module.exports.deleteReview = async (req, res) => {
     const place = await EksplendorDB.findById(id)
     const deletedReviewEksDB = await EksplendorDB.findByIdAndUpdate(id, { $pull: { reviews: reviewId } })
     const deletedReview = await ReviewDB.findByIdAndDelete(reviewId)
-    req.flash('success', "Pomyślnie usunięto")
+    req.flash('success', "Successfully deleted")
     res.redirect(`/places/${place.id}`)
 };

@@ -15,7 +15,7 @@ module.exports.newUser = async (req, res) => {
         const registerUser = await User.register(user, password);
         req.login(registerUser, err => {
             if (err) return next(err);
-            req.flash('success', 'Pomyślnie utworzono');
+            req.flash('success', 'Successfully created');
             res.redirect('/places');
         })
     } catch (e) {
@@ -31,7 +31,7 @@ module.exports.loginForm = (req, res) => {
 
 // User login
 module.exports.loginUser = async (req, res) => {
-    req.flash('success', 'Pomyślnie zalogowano');
+    req.flash('success', 'Successfully logged in');
     const redirectUrl = res.locals.returnTo || '/places/usermap';
     res.redirect(redirectUrl);
 };
@@ -42,7 +42,7 @@ module.exports.userLogout = (req, res, next) => {
         if (err) {
             return next(err);
         }
-        req.flash('success', 'Pomyślnie wylogowano');
+        req.flash('success', 'Successfully logged out');
         res.redirect('/places');
     });
 };
