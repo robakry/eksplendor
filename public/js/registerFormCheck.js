@@ -20,6 +20,15 @@ const showError = (input, msg) => {
     isValid = false
 };
 
+const showSuccess = (input) => {
+    const formCart = input.parentElement;
+    input.classList.add('form-success');
+    input.classList.remove('form-error');
+    const small = formCart.querySelector('small');
+    small.classList.remove('form-error')
+    isValid = true
+};
+
 const checkUsername = (input, min, max) => {
     if (input.value.trim() === '') {
         showError(input, 'Please enter a username.');
