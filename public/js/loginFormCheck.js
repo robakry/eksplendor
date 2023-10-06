@@ -40,7 +40,7 @@ const showSuccess = (input) => {
 
 const checkUsername = (input) => {
     if (input.value.trim() === '') {
-        showError(input, 'Proszę wprowadzić login.')
+        showError(input, 'Please enter a login.')
         isLoginValid = false
     } else {
         showSuccess(input);
@@ -50,7 +50,7 @@ const checkUsername = (input) => {
 
 const checkPassword = (input) => {
     if (input.value.trim() === '') {
-        showError(input, 'Proszę wprowadzić hasło.')
+        showError(input, 'Please enter a password.')
         isPasswordValid = false
     } else {
         showSuccess(input);
